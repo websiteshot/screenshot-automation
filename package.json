@@ -1,0 +1,37 @@
+{
+  "name": "@websiteshot/screenshot-automation",
+  "version": "0.0.1",
+  "description": "Automated Screenshot Generation for Websiteshot Docs.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --p tsconfig.json",
+    "start": "ts-node ./src/index.ts"
+  },
+  "repository": "github:websiteshot/screenshot-automation",
+  "author": "adam.urban@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@websiteshot/nodejs-client": "0.0.7",
+    "aws-sdk": "^2.820.0",
+    "pino": "^6.8.0"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.5.11",
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.20",
+    "@types/pino": "^6.3.4",
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "pino-pretty": "^4.3.0",
+    "prettier": "2.0.5",
+    "ts-jest": "^26.1.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6"
+  }
+}
