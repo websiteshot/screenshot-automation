@@ -140,6 +140,19 @@ const examples: Request[] = [
     urls: [
       {
         url: `${EXAMPLE_URL}`,
+        name: 'example-upperhalf',
+      },
+    ],
+    screenshotParameter: {
+      width: WIDTH,
+      height: HEIGHT,
+      area: 'upperhalf',
+    },
+  },
+  {
+    urls: [
+      {
+        url: `${EXAMPLE_URL}`,
         name: 'example-macos-simple-dark',
       },
     ],
