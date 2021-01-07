@@ -4,8 +4,8 @@ import { Request } from './types/Request.type'
 import { logger } from './utils/Logger'
 
 const GITHUB_BASE = `https://github.com/websiteshot`
-const BASE = `https://websiteshot.app`
-const EXAMPLE_URL = `https://websiteshot.app`
+const BASE = `https://console.websiteshot.app`
+const EXAMPLE_URL = `https://console.websiteshot.app`
 const PROJECT = process.env.DOCS_PROJECT
 const WIDTH = 1440
 const HEIGHT = 900
