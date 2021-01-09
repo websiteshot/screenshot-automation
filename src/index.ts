@@ -31,6 +31,18 @@ const unguarded: Request = {
       name: 'app-login',
     },
     {
+      url: `${BASE}/examples/social-share?data=eyJzdHlsZSI6eyJpbWFnZSI6eyJ1cmwiOiJodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTUxOTY4MTM5Mzc4NC1kMTIwMjY3OTMzYmE%2FaXhpZD1NWHd4TWpBM2ZEQjhNSHh3YUc5MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh3JTNEJml4bGliPXJiLTEuMi4xJmF1dG89Zm9ybWF0JmZpdD1jcm9wJnc9MTM1MCZxPTgwIiwiY3JlZGl0IjoiQmVuamFtaW4gVm9yb3MgKEB2b3Jvc2Jlbmlzb3ApIn0sImNvbG9yIjp7InIiOjExNSwiZyI6MTIsImIiOjE1MywiYSI6MC43fX0sImNvbnRlbnQiOnsidGl0bGUiOiJTY3JlZW5zaG90IGxpa2UgYSBQcm8iLCJhdXRob3IiOiJBZGFtIFVyYmFuIChAdXJiYW5pc2llcnVuZykiLCJ0YWdzIjpbInNjcmVlbnNob3RzIiwiYXV0b21hdGlvbiIsImF3ZXNvbWUiXSwidXJsIjoiaHR0cHM6Ly93ZWJzaXRlc2hvdC5hcHAifX0%3D`,
+      name: 'examples-social-share-template-1',
+    },
+    {
+      url: `${BASE}/examples/social-share?data=eyJzdHlsZSI6eyJpbWFnZSI6eyJ1cmwiOiJodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTQ5MzI0NjUwNzEzOS05MWU4ZmFkOTk3OGU%2FaXhpZD1NWHd4TWpBM2ZEQjhNSHh3YUc5MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh3JTNEJml4bGliPXJiLTEuMi4xJmF1dG89Zm9ybWF0JmZpdD1jcm9wJnc9MTM1MCZxPTgwIiwiY3JlZGl0IjoiR2FycmV0dCBQYXJrZXIgKEBnYXJyZXR0cHN5c3RlbXMpIn0sImNvbG9yIjp7InIiOjc1LCJnIjoxMTIsImIiOjEzMywiYSI6MC43fX0sImNvbnRlbnQiOnsidGl0bGUiOiJTY3JlZW5zaG90IGxpa2UgYSBQcm8iLCJhdXRob3IiOiJBZGFtIFVyYmFuIChAdXJiYW5pc2llcnVuZykiLCJ0YWdzIjpbInNjcmVlbnNob3RzIiwiYXV0b21hdGlvbiIsImF3ZXNvbWUiXSwidXJsIjoiaHR0cHM6Ly93ZWJzaXRlc2hvdC5hcHAifX0%3D`,
+      name: 'examples-social-share-template-2',
+    },
+    {
+      url: `${BASE}/examples/social-share?data=eyJzdHlsZSI6eyJpbWFnZSI6eyJ1cmwiOiJodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTUzNDE0MzA0NjA0My00NGFmMzQ2OTgzNmI%2FaXhpZD1NWHd4TWpBM2ZEQjhNSHh3YUc5MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh3JTNEJml4bGliPXJiLTEuMi4xJmF1dG89Zm9ybWF0JmZpdD1jcm9wJnc9NzAwJnE9ODAiLCJjcmVkaXQiOiJUaXJheWEgQWRhbSAoQHR0YWhfcGhvdG9zKSJ9LCJjb2xvciI6eyJyIjozNSwiZyI6MjEyLCJiIjoyMzMsImEiOjAuN319LCJjb250ZW50Ijp7InRpdGxlIjoiU2NyZWVuc2hvdCBsaWtlIGEgUHJvIiwiYXV0aG9yIjoiQWRhbSBVcmJhbiAoQHVyYmFuaXNpZXJ1bmcpIiwidGFncyI6WyJzY3JlZW5zaG90cyIsImF1dG9tYXRpb24iLCJhd2Vzb21lIl0sInVybCI6Imh0dHBzOi8vd2Vic2l0ZXNob3QuYXBwIn19`,
+      name: 'examples-social-share-template-3',
+    },
+    {
       url: `${GITHUB_BASE}/nodejs-client#readme`,
       name: 'github-nodejs-client',
     },
