@@ -70,6 +70,39 @@ const unguarded: Request = {
   },
 }
 
+const dashboard: Request = {
+  urls: [
+    {
+      url: `${BASE}/examples/dashboard-card-image?data=eyJzdHlsZSI6eyJpbWFnZSI6eyJ1cmwiOiJodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTU4NDk0OTA5MTU5OC1jMzFkYWFhYTRhYTk%2FaXhpZD1NWHd4TWpBM2ZEQjhNSHh3YUc5MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh3JTNEJml4bGliPXJiLTEuMi4xJmF1dG89Zm9ybWF0JmZpdD1jcm9wJnc9MTM1MCZxPTgwIiwiY3JlZGl0IjoiTWl0Y2hlbGwgTHVhIChAbWl0Y2hlbDN1bykifSwiY29sb3IiOnsiciI6MTE1LCJnIjoxMiwiYiI6MTUzLCJhIjowLjd9fSwiY29udGVudCI6eyJ0aXRsZSI6IjwvPiIsInNpemUiOiJ4bCJ9LCJlZGl0IjpmYWxzZX0%3D`,
+      name: 'dashboard-0',
+    },
+    {
+      url: `${BASE}/examples/dashboard-card-image?data=eyJzdHlsZSI6eyJpbWFnZSI6eyJ1cmwiOiJodHRwczovL3dlYnNpdGVzaG90LWRvY3MuczMuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb20vZ2l0aHViLWdpdGh1Yi1hY3Rpb24tbWFya2V0cGxhY2UucG5nIiwiY3JlZGl0IjoiIn0sImNvbG9yIjp7InIiOjU4LCJnIjoxMiwiYiI6MTYzLCJhIjowLjl9fSwiY29udGVudCI6eyJ0aXRsZSI6IkludGVncmF0ZSBpbiBHaXRodWIgQWN0aW9ucyIsInNpemUiOiJtIn0sImVkaXQiOmZhbHNlfQ%3D%3D`,
+      name: 'dashboard-1',
+    },
+    {
+      url: `${BASE}/examples/dashboard-card-image?data=eyJzdHlsZSI6eyJpbWFnZSI6eyJ1cmwiOiJodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTQ4NTg1NjQwNzY0Mi03ZjliYTAyNjhiNTE%2FaXhsaWI9cmItMS4yLjEmaXhpZD1NWHd4TWpBM2ZEQjhNSHh3YUc5MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh3JTNEJmF1dG89Zm9ybWF0JmZpdD1jcm9wJnc9MTM1MCZxPTgwIiwiY3JlZGl0IjoiQXJ0ZW0gU2FwZWdpbiAoQHNhcGVnaW4pIn0sImNvbG9yIjp7InIiOjYzLCJnIjo1NSwiYiI6MjAxLCJhIjowLjd9fSwiY29udGVudCI6eyJ0aXRsZSI6IlNjcmlwdCBpdCEiLCJzaXplIjoibCJ9LCJlZGl0IjpmYWxzZX0%3D`,
+      name: 'dashboard-2',
+    },
+    {
+      url: `${BASE}/examples/dashboard-card-image?data=eyJzdHlsZSI6eyJpbWFnZSI6eyJ1cmwiOiJodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTUyMzQ3NDQzODgxMC1iMDRhMjQ4MDYzM2M%2FaXhpZD1NWHd4TWpBM2ZEQjhNSHh3YUc5MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh3JTNEJml4bGliPXJiLTEuMi4xJmF1dG89Zm9ybWF0JmZpdD1jcm9wJnc9MTM1MCZxPTgwIiwiY3JlZGl0IjoiQ2hyaXN0aWFuIFdpZWRpZ2VyIChAY2hyaXN0aWFudykifSwiY29sb3IiOnsiciI6MjQ3LCJnIjozNywiYiI6MTMzLCJhIjowLjd9fSwiY29udGVudCI6eyJ0aXRsZSI6IlNvY2lhbCBTaGFyZSIsInNpemUiOiJsIn0sImVkaXQiOmZhbHNlfQ%3D%3D`,
+      name: 'dashboard-3',
+    },
+    {
+      url: `${BASE}/examples/dashboard-card-image?data=eyJzdHlsZSI6eyJpbWFnZSI6eyJ1cmwiOiJodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTQ1NjMyNDUwNDQzOS0zNjdjZWUzYjNjMzI%2FaXhpZD1NWHd4TWpBM2ZEQjhNSHh3YUc5MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh3JTNEJml4bGliPXJiLTEuMi4xJmF1dG89Zm9ybWF0JmZpdD1jcm9wJnc9MTM1MCZxPTgwIiwiY3JlZGl0IjoiQ2F0aHJ5biBMYXZlcnkifSwiY29sb3IiOnsiciI6NjcsImciOjk3LCJiIjoyMzgsImEiOjAuOH19LCJjb250ZW50Ijp7InRpdGxlIjoiTG9nIHlvdXIgV2Vic2l0ZSBQcm9ncmVzcyIsInNpemUiOiJtIn0sImVkaXQiOmZhbHNlfQ%3D%3D`,
+      name: 'dashboard-4',
+    },
+    {
+      url: `${BASE}/examples/dashboard-card-image?data=eyJzdHlsZSI6eyJpbWFnZSI6eyJ1cmwiOiJodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTUzMTgzNzc2MzkwNC01ZDNjYjI2MzJlYTM%2FaXhpZD1NWHd4TWpBM2ZEQjhNSHh3YUc5MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh3JTNEJml4bGliPXJiLTEuMi4xJmF1dG89Zm9ybWF0JmZpdD1jcm9wJnc9NjcxJnE9ODAiLCJjcmVkaXQiOiJQb3NzZXNzZWQgUGhvdG9ncmFwaHkgKEBwb3NzZXNzZWRwaG90b2dyYXBoeSkifSwiY29sb3IiOnsiciI6ODYsImciOjExLCJiIjoxNzMsImEiOjAuN319LCJjb250ZW50Ijp7InRpdGxlIjoiQXV0b21hdGUgeW91ciBEb2NzIiwic2l6ZSI6Im0ifSwiZWRpdCI6ZmFsc2V9`,
+      name: 'dashboard-5',
+    },
+  ],
+  screenshotParameter: {
+    width: WIDTH,
+    height: HEIGHT,
+  },
+}
+
 const examples: Request[] = [
   {
     urls: [
@@ -251,6 +284,13 @@ const guarded: Request = {
 }
 
 async function run() {
+  try {
+    await AutomationController.run(dashboard)
+  } catch (error) {
+    logger.error(`Failed to create unguarded Screenshots`)
+    logger.error(error)
+  }
+
   try {
     await AutomationController.run(unguarded)
   } catch (error) {
