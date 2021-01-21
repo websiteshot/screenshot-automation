@@ -24,6 +24,54 @@ const EFFECTS = [
   },
 ]
 
+const logofull: Request = {
+  urls: [
+    {
+      // url: `${BASE}/examples/logo`,
+      url: `https://int.websiteshot.app/examples/logo`,
+      name: 'logofull',
+    },
+  ],
+  screenshotParameter: {
+    width: 1000,
+    height: 1000,
+  },
+}
+
+const logofinal: Request = {
+  urls: [
+    {
+      // url: `${BASE}/examples/logo`,
+      url: `https://int.websiteshot.app/examples/logo`,
+      name: 'logofinal',
+    },
+  ],
+  screenshotParameter: {
+    width: 1000,
+    height: 1000,
+    effects: [
+      {
+        effect: 'roundcorners',
+        options: {
+          radius: 50,
+        },
+      },
+      // {
+      //   effect: 'margin',
+      //   options: {
+      //     margin: 15,
+      //   },
+      // },
+      // {
+      //   effect: 'resize',
+      //   options: {
+      //     width: 520,
+      //   },
+      // },
+    ],
+  },
+}
+
 const unguarded: Request = {
   urls: [
     {
@@ -285,35 +333,42 @@ const guarded: Request = {
 
 async function run() {
   try {
-    await AutomationController.run(dashboard)
+    await AutomationController.run(logofinal, false)
   } catch (error) {
-    logger.error(`Failed to create unguarded Screenshots`)
+    logger.error(`Failed to create login Screenshots`)
     logger.error(error)
   }
 
-  try {
-    await AutomationController.run(unguarded)
-  } catch (error) {
-    logger.error(`Failed to create unguarded Screenshots`)
-    logger.error(error)
-  }
+  // try {
+  //   await AutomationController.run(dashboard)
+  // } catch (error) {
+  //   logger.error(`Failed to create dashboard Screenshots`)
+  //   logger.error(error)
+  // }
 
-  try {
-    await AutomationController.run(guarded)
-  } catch (error) {
-    logger.error(`Failed to create guarded Screenshots`)
-    logger.error(error)
-  }
+  // try {
+  //   await AutomationController.run(unguarded)
+  // } catch (error) {
+  //   logger.error(`Failed to create unguarded Screenshots`)
+  //   logger.error(error)
+  // }
 
-  try {
-    const promises = examples.map((example) =>
-      AutomationController.run(example),
-    )
-    await Promise.all(promises)
-  } catch (error) {
-    logger.error(`Failed to create example Screenshots`)
-    logger.error(error)
-  }
+  // try {
+  //   await AutomationController.run(guarded)
+  // } catch (error) {
+  //   logger.error(`Failed to create guarded Screenshots`)
+  //   logger.error(error)
+  // }
+
+  // try {
+  //   const promises = examples.map((example) =>
+  //     AutomationController.run(example),
+  //   )
+  //   await Promise.all(promises)
+  // } catch (error) {
+  //   logger.error(`Failed to create example Screenshots`)
+  //   logger.error(error)
+  // }
 }
 
 run()
