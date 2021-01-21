@@ -56,12 +56,12 @@ const logofinal: Request = {
           radius: 50,
         },
       },
-      // {
-      //   effect: 'margin',
-      //   options: {
-      //     margin: 15,
-      //   },
-      // },
+      {
+        effect: 'margin',
+        options: {
+          margin: 50,
+        },
+      },
       // {
       //   effect: 'resize',
       //   options: {
