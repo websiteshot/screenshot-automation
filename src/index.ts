@@ -27,8 +27,7 @@ const EFFECTS = [
 const logofull: Request = {
   urls: [
     {
-      // url: `${BASE}/examples/logo`,
-      url: `https://int.websiteshot.app/examples/logo`,
+      url: `${BASE}/examples/logo`,
       name: 'logofull',
     },
   ],
@@ -38,12 +37,53 @@ const logofull: Request = {
   },
 }
 
-const logofinal: Request = {
+const logofullwl: Request = {
   urls: [
     {
-      // url: `${BASE}/examples/logo`,
-      url: `https://int.websiteshot.app/examples/logo`,
-      name: 'logofinal',
+      url: `${BASE}/examples/logo?size=l`,
+      name: 'logofullwl',
+    },
+  ],
+  screenshotParameter: {
+    width: 1000,
+    height: 1000,
+    effects: [
+      {
+        effect: 'resize',
+        options: {
+          width: 520,
+        },
+      },
+    ],
+  },
+}
+
+const logofullwm: Request = {
+  urls: [
+    {
+      url: `${BASE}/examples/logo?size=m`,
+      name: 'logofullwm',
+    },
+  ],
+  screenshotParameter: {
+    width: 1000,
+    height: 1000,
+    effects: [
+      {
+        effect: 'resize',
+        options: {
+          width: 520,
+        },
+      },
+    ],
+  },
+}
+
+const logofullroundedmargin: Request = {
+  urls: [
+    {
+      url: `${BASE}/examples/logo`,
+      name: 'logofullroundedmargin',
     },
   ],
   screenshotParameter: {
@@ -62,12 +102,39 @@ const logofinal: Request = {
           margin: 50,
         },
       },
-      // {
-      //   effect: 'resize',
-      //   options: {
-      //     width: 520,
-      //   },
-      // },
+    ],
+  },
+}
+
+const logofullroundedmarginsmall: Request = {
+  urls: [
+    {
+      url: `${BASE}/examples/logo`,
+      name: 'logofullroundedmarginsmall',
+    },
+  ],
+  screenshotParameter: {
+    width: 1000,
+    height: 1000,
+    effects: [
+      {
+        effect: 'roundcorners',
+        options: {
+          radius: 50,
+        },
+      },
+      {
+        effect: 'margin',
+        options: {
+          margin: 50,
+        },
+      },
+      {
+        effect: 'resize',
+        options: {
+          width: 520,
+        },
+      },
     ],
   },
 }
@@ -333,42 +400,52 @@ const guarded: Request = {
 
 async function run() {
   try {
-    await AutomationController.run(logofinal, false)
+    const logorequests: Request[] = [
+      logofull,
+      logofullroundedmargin,
+      logofullroundedmarginsmall,
+      logofullwl,
+      logofullwm,
+    ]
+    const promises = logorequests.map((logorequest) =>
+      AutomationController.run(logorequest, false),
+    )
+    await Promise.all(promises)
   } catch (error) {
     logger.error(`Failed to create login Screenshots`)
     logger.error(error)
   }
 
-  // try {
-  //   await AutomationController.run(dashboard)
-  // } catch (error) {
-  //   logger.error(`Failed to create dashboard Screenshots`)
-  //   logger.error(error)
-  // }
+  try {
+    await AutomationController.run(dashboard)
+  } catch (error) {
+    logger.error(`Failed to create dashboard Screenshots`)
+    logger.error(error)
+  }
 
-  // try {
-  //   await AutomationController.run(unguarded)
-  // } catch (error) {
-  //   logger.error(`Failed to create unguarded Screenshots`)
-  //   logger.error(error)
-  // }
+  try {
+    await AutomationController.run(unguarded)
+  } catch (error) {
+    logger.error(`Failed to create unguarded Screenshots`)
+    logger.error(error)
+  }
 
-  // try {
-  //   await AutomationController.run(guarded)
-  // } catch (error) {
-  //   logger.error(`Failed to create guarded Screenshots`)
-  //   logger.error(error)
-  // }
+  try {
+    await AutomationController.run(guarded)
+  } catch (error) {
+    logger.error(`Failed to create guarded Screenshots`)
+    logger.error(error)
+  }
 
-  // try {
-  //   const promises = examples.map((example) =>
-  //     AutomationController.run(example),
-  //   )
-  //   await Promise.all(promises)
-  // } catch (error) {
-  //   logger.error(`Failed to create example Screenshots`)
-  //   logger.error(error)
-  // }
+  try {
+    const promises = examples.map((example) =>
+      AutomationController.run(example),
+    )
+    await Promise.all(promises)
+  } catch (error) {
+    logger.error(`Failed to create example Screenshots`)
+    logger.error(error)
+  }
 }
 
 run()
