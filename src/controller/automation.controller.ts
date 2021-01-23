@@ -18,7 +18,7 @@ export class AutomationController {
     })
   }
 
-  public static async run(request: Request) {
+  public static async run(request: Request, upload: boolean = true) {
     // setup
     logger.info(`Setup...`)
     const accessKey: SecretAccessKey = {
@@ -68,18 +68,20 @@ export class AutomationController {
     await Promise.all(downloadPromises)
     await AutomationController.sleep(5)
 
-    // upload screenshots to cloud bucket
-    logger.info(`Uploading Screenshots to Cloud Bucket`)
-    const bucketController = new BucketController(
-      accessKey,
-      process.env.AWS_BUCKET,
-    )
-    const uploadPromises = files.map((file) =>
-      bucketController.upload(
-        Path.resolve(__dirname, `../..`, DOWNLOAD_FOLDER, file.name),
-        file.name,
-      ),
-    )
-    await Promise.all(uploadPromises)
+    if (upload) {
+      // upload screenshots to cloud bucket
+      logger.info(`Uploading Screenshots to Cloud Bucket`)
+      const bucketController = new BucketController(
+        accessKey,
+        process.env.AWS_BUCKET,
+      )
+      const uploadPromises = files.map((file) =>
+        bucketController.upload(
+          Path.resolve(__dirname, `../..`, DOWNLOAD_FOLDER, file.name),
+          file.name,
+        ),
+      )
+      await Promise.all(uploadPromises)
+    }
   }
 }
