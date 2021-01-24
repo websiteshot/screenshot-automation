@@ -1,4 +1,10 @@
 /* eslint-disable id-length */
+import {
+  BrowserFrameStyle,
+  CropArea,
+  ImageEffect,
+  ImageEffectConfig,
+} from '@websiteshot/nodejs-client/dist/types/ScreenshotParameter.type'
 import { AutomationController } from './controller/automation.controller'
 import { Request } from './types/Request.type'
 import { logger } from './utils/Logger'
@@ -10,9 +16,9 @@ const PROJECT = process.env.DOCS_PROJECT
 const WIDTH = 1440
 const HEIGHT = 900
 const LOADING_TIME = 15000
-const EFFECTS = [
+const EFFECTS: ImageEffectConfig[] = [
   {
-    effect: 'shadow',
+    effect: ImageEffect.SHADOW,
     options: {
       color: {
         r: 16,
@@ -34,6 +40,7 @@ const logofull: Request = {
   screenshotParameter: {
     width: 1000,
     height: 1000,
+    tags: ['logo'],
   },
 }
 
@@ -47,9 +54,10 @@ const logofullwl: Request = {
   screenshotParameter: {
     width: 1000,
     height: 1000,
+    tags: ['logo'],
     effects: [
       {
-        effect: 'resize',
+        effect: ImageEffect.RESIZE,
         options: {
           width: 520,
         },
@@ -68,9 +76,10 @@ const logofullwm: Request = {
   screenshotParameter: {
     width: 1000,
     height: 1000,
+    tags: ['logo'],
     effects: [
       {
-        effect: 'resize',
+        effect: ImageEffect.RESIZE,
         options: {
           width: 520,
         },
@@ -89,15 +98,16 @@ const logofullroundedmargin: Request = {
   screenshotParameter: {
     width: 1000,
     height: 1000,
+    tags: ['logo'],
     effects: [
       {
-        effect: 'roundcorners',
+        effect: ImageEffect.ROUNDCORNERS,
         options: {
           radius: 50,
         },
       },
       {
-        effect: 'margin',
+        effect: ImageEffect.MARGIN,
         options: {
           margin: 50,
         },
@@ -116,21 +126,22 @@ const logofullroundedmarginsmall: Request = {
   screenshotParameter: {
     width: 1000,
     height: 1000,
+    tags: ['logo'],
     effects: [
       {
-        effect: 'roundcorners',
+        effect: ImageEffect.ROUNDCORNERS,
         options: {
           radius: 50,
         },
       },
       {
-        effect: 'margin',
+        effect: ImageEffect.MARGIN,
         options: {
           margin: 50,
         },
       },
       {
-        effect: 'resize',
+        effect: ImageEffect.RESIZE,
         options: {
           width: 520,
         },
@@ -182,6 +193,7 @@ const unguarded: Request = {
     width: WIDTH,
     height: HEIGHT,
     effects: EFFECTS,
+    tags: ['unguarded'],
   },
 }
 
@@ -215,6 +227,7 @@ const dashboard: Request = {
   screenshotParameter: {
     width: WIDTH,
     height: HEIGHT,
+    tags: ['dashboard'],
   },
 }
 
@@ -229,6 +242,7 @@ const examples: Request[] = [
     screenshotParameter: {
       width: WIDTH,
       height: HEIGHT,
+      tags: ['example'],
     },
   },
   {
@@ -241,9 +255,10 @@ const examples: Request[] = [
     screenshotParameter: {
       width: WIDTH,
       height: HEIGHT,
+      tags: ['example'],
       effects: [
         {
-          effect: 'shadow',
+          effect: ImageEffect.SHADOW,
           options: {
             color: {
               r: 16,
@@ -266,9 +281,10 @@ const examples: Request[] = [
     screenshotParameter: {
       width: WIDTH,
       height: HEIGHT,
+      tags: ['example'],
       effects: [
         {
-          effect: 'resize',
+          effect: ImageEffect.RESIZE,
           options: {
             width: 300,
           },
@@ -286,11 +302,54 @@ const examples: Request[] = [
     screenshotParameter: {
       width: WIDTH,
       height: HEIGHT,
+      tags: ['example'],
       effects: [
         {
-          effect: 'blur',
+          effect: ImageEffect.BLUR,
           options: {
             radius: 15,
+          },
+        },
+      ],
+    },
+  },
+  {
+    urls: [
+      {
+        url: `${EXAMPLE_URL}`,
+        name: 'example-roundedcorners',
+      },
+    ],
+    screenshotParameter: {
+      width: WIDTH,
+      height: HEIGHT,
+      tags: ['example'],
+      effects: [
+        {
+          effect: ImageEffect.ROUNDCORNERS,
+          options: {
+            radius: 50,
+          },
+        },
+      ],
+    },
+  },
+  {
+    urls: [
+      {
+        url: `${EXAMPLE_URL}`,
+        name: 'example-margin',
+      },
+    ],
+    screenshotParameter: {
+      width: WIDTH,
+      height: HEIGHT,
+      tags: ['example'],
+      effects: [
+        {
+          effect: ImageEffect.MARGIN,
+          options: {
+            radius: 20,
           },
         },
       ],
@@ -306,7 +365,8 @@ const examples: Request[] = [
     screenshotParameter: {
       width: WIDTH,
       height: HEIGHT,
-      area: 'upperhalf',
+      tags: ['example'],
+      area: CropArea.UPPER_HALF,
     },
   },
   {
@@ -319,7 +379,8 @@ const examples: Request[] = [
     screenshotParameter: {
       width: WIDTH,
       height: HEIGHT,
-      style: 'macos-simple-dark',
+      tags: ['example'],
+      style: BrowserFrameStyle.MAC_OS_SIMPLE_DARK,
     },
   },
   {
@@ -332,10 +393,11 @@ const examples: Request[] = [
     screenshotParameter: {
       width: WIDTH,
       height: HEIGHT,
-      style: 'macos-simple-dark',
+      tags: ['example'],
+      style: BrowserFrameStyle.MAC_OS_SIMPLE_DARK,
       effects: [
         {
-          effect: 'shadow',
+          effect: ImageEffect.SHADOW,
           options: {
             color: {
               r: 16,
@@ -377,10 +439,16 @@ const guarded: Request = {
       name: 'app-apikeys',
       loadingTime: LOADING_TIME,
     },
+    {
+      url: `${BASE}/projects/${PROJECT}/templates`,
+      name: 'app-apikeys',
+      loadingTime: LOADING_TIME,
+    },
   ],
   screenshotParameter: {
     width: WIDTH,
     height: HEIGHT,
+    tags: ['guarded'],
     effects: EFFECTS,
     loginParameter: {
       username: {
@@ -408,7 +476,7 @@ async function run() {
       logofullwm,
     ]
     const promises = logorequests.map((logorequest) =>
-      AutomationController.run(logorequest, false),
+      AutomationController.run(logorequest),
     )
     await Promise.all(promises)
   } catch (error) {

@@ -12,7 +12,7 @@
   "author": "adam.urban@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "@websiteshot/nodejs-client": "0.0.7",
+    "@websiteshot/nodejs-client": "0.0.10",
     "aws-sdk": "^2.820.0",
     "pino": "^6.8.0"
   },
