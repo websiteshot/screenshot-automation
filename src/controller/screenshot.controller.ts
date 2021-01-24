@@ -17,7 +17,7 @@ export class ScreenshotController {
   public async create(
     urls: Url[],
     screenshotParameter: ScreenshotParameter,
-  ): Promise<GetResponse> {
+  ): Promise<CreateResponse> {
     const createRequest: CreateRequest = {
       screenshotParameter,
       urls,
