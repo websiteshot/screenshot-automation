@@ -441,7 +441,7 @@ const guarded: Request = {
     },
     {
       url: `${BASE}/projects/${PROJECT}/templates`,
-      name: 'app-apikeys',
+      name: 'app-templates',
       loadingTime: LOADING_TIME,
     },
   ],
