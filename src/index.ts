@@ -150,6 +150,40 @@ const logofullroundedmarginsmall: Request = {
   },
 }
 
+const logofullroundedmarginsmall200: Request = {
+  urls: [
+    {
+      url: `${BASE}/examples/logo`,
+      name: 'logofullroundedmarginsmall',
+    },
+  ],
+  screenshotParameter: {
+    width: 1000,
+    height: 1000,
+    tags: ['logo'],
+    effects: [
+      {
+        effect: ImageEffect.ROUNDCORNERS,
+        options: {
+          radius: 50,
+        },
+      },
+      {
+        effect: ImageEffect.MARGIN,
+        options: {
+          margin: 50,
+        },
+      },
+      {
+        effect: ImageEffect.RESIZE,
+        options: {
+          width: 200,
+        },
+      },
+    ],
+  },
+}
+
 const unguarded: Request = {
   urls: [
     {
@@ -468,10 +502,19 @@ const guarded: Request = {
 
 async function run() {
   try {
+    const logopublic = logofullroundedmarginsmall
+    logopublic.urls[0].name = 'logopublic'
+
+    const logopublicsmall = logofullroundedmarginsmall200
+    logopublicsmall.urls[0].name = 'logopublicsmall'
+
     const logorequests: Request[] = [
+      logopublic,
+      logopublicsmall,
       logofull,
       logofullroundedmargin,
       logofullroundedmarginsmall,
+      logofullroundedmarginsmall200,
       logofullwl,
       logofullwm,
     ]
