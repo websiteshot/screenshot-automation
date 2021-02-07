@@ -25,6 +25,9 @@ export class BucketController {
       Bucket: this.bucketName,
       Key: target,
       Body: content,
+      Metadata: {
+        'Content-Type': 'image/png',
+      },
     }
     return new Promise((resolve, reject) => {
       this.s3.upload(params, (error, data) => {
