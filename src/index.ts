@@ -474,6 +474,11 @@ const guarded: Request = {
       loadingTime: LOADING_TIME,
     },
     {
+      url: `${BASE}/projects/${PROJECT}/webhooks`,
+      name: 'app-webhooks',
+      loadingTime: LOADING_TIME,
+    },
+    {
       url: `${BASE}/projects/${PROJECT}/templates`,
       name: 'app-templates',
       loadingTime: LOADING_TIME,
